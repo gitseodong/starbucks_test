@@ -7,4 +7,10 @@ searchEl.addEventListener("click", () => {
 
 inputEl.addEventListener("focus", () => {
   searchEl.classList.add("focused");
+  inputEl.setAttribute("placeholder", "통합검색");
+});
+
+inputEl.addEventListener("blur", () => {
+  searchEl.classList.remove("focused");
+  inputEl.setAttribute("placeholder", "");
 });

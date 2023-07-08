@@ -4,7 +4,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
-  font-family: "Nanum Gothic", sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 img {
   display: block;
@@ -15,13 +15,13 @@ a {
 
 /* HEADER */
 header {
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
 }
 header .inner {
   width: 1100px;
   height: 120px;
   margin: 0 auto;
-  background-color: orange;
   position: relative;
 }
 header a.logo {
@@ -31,23 +31,32 @@ header a.logo {
   bottom: 0;
   left: 0;
   margin: auto;
-  display: none;
 }
 header .sub-menu {
   display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 header .sub-menu ul.menu {
   display: flex;
+  font-family: Arial, Helvetica, sans-serif;
 }
 header .sub-menu ul.menu li {
-  /* display: flex; */
+  position: relative;
 }
 header .sub-menu ul.menu li::before {
-  content: "";
-  display: block;
+  content: '';
   width: 1px;
   height: 12px;
-  background-color: black;
+  background-color: #e5e5e5;
+  position: absolute; /* display: block; 필요, 생략가능 */
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+header .sub-menu ul.menu li:first-child::before {
+  display: none;
 }
 header .sub-menu ul.menu li a {
   font-size: 12px;
@@ -86,4 +95,9 @@ header .sub-menu .search .material-icons {
   top: 0;
   bottom: 0;
   margin: auto;
+  transition: 0.4s;
+}
+
+header .sub-menu .search.focused .material-icons {
+  opacity: 0;
 }
