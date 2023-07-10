@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
+  height: 3000px;
 }
 img {
   display: block;
@@ -12,17 +13,23 @@ img {
 a {
   text-decoration: none;
 }
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
 
 /* HEADER */
 header {
+  /* block요소에서 position이 absolute or fixed인 경우 가로 너비가 최소한으로 줄어드는 상태로 바뀜. 그래서 width:100%;를 넣음.(전역배지1 강의 6~7분경)*/
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
-header .inner {
-  width: 1100px;
-  min-height: 120px;
-  margin: 0 auto;
-  position: relative;
+header > .inner {
+  height: 120px;
 }
 header a.logo {
   height: 75px;
@@ -166,4 +173,16 @@ header ul.main-menu li.item .item__contents .contents__texture h4 {
 header ul.main-menu li.item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px;
+}
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rbga(0, 0, 0, 0.15);
+  cursor: pointer;
 }
